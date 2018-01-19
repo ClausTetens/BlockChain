@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.Security.Cryptography;
 
 
-//  inspired from https://medium.freecodecamp.org/how-does-blockchain-really-work-i-built-an-app-to-show-you-6b70cd4caf7d
+//  inspired by https://medium.freecodecamp.org/how-does-blockchain-really-work-i-built-an-app-to-show-you-6b70cd4caf7d
 
 namespace BlockChain {
     /// <summary>
@@ -125,7 +125,7 @@ namespace BlockChain {
 
             string getHashSha256(string stringToBeHashed) {
                 StringBuilder hashedString = new StringBuilder();
-                foreach(byte hashedByte in new SHA512Managed().ComputeHash(Encoding.Unicode.GetBytes(stringToBeHashed))) {
+                foreach(byte hashedByte in new SHA256Managed().ComputeHash(Encoding.Unicode.GetBytes(stringToBeHashed))) {
                     hashedString.Append(String.Format("{0:x2}", hashedByte));
                 }
                 return hashedString.ToString();
